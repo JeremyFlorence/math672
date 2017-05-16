@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage[normalem]{ulem}
+
+\newcounter{problem}
+\newcounter{solution}
+
+\newcommand\Problem{%
+  \stepcounter{problem}%
+  \textbf{\theproblem.}~%
+  \setcounter{solution}{0}%
+}
+
+\newcommand\TheSolution{%
+  \textbf{Solution:} %
+}
+
+\newcommand\Proof{%
+	\textbf{Proof:} %
+}
+
+\parindent 0in
+\parskip 1em
+
+\begin{document}
+Name: Jeremy Florence \\
+Course: Math 672 \\
+Assignment: Final Exam \\
+Due: 5/19/17
+
+\begin{enumerate}
+	\item Show that every quotient ring of a Noetherian ring is a Noetherian Ring. Is the same true for "every subring of..."?
+	
+	\Proof Let $R$ be a Noetherian ring with the ideal $I$. We  want to show that $R/I$ is also Noetherian. Recall that $R/I=\{r+I|r \in R \}$
+	
+	\item Let $k$ be field. Prove that $k[x,y]$ is \emph{not} a PID.
+	
+	\item Find a ring $R$ which has a chain of prime ideals $P_1 \subsetneq P_2 \subsetneq P_3 \subsetneq P_4 \subsetneq R$.
+	
+	\item Prove that $\mathbb{Z}[i]$ is a Euclidean domain.
+	
+	\item Let $I \subseteq P \subsetneq R$, where $I$ is an ideal and $P$ is a prime ideal of $R$. Prove that the ring $R_P/I^e$ (the quotient of the localization at $P$ by the extension of the ideal $I$ to that localization) and the ring $(R/I)_{P/I}$ (the localization of the quotient ring $R/I$ at the prime ideal $P/I$) are isomorphic.
+	
+	\item Let $R$ be a ring and let $f \in R$ be not nilpotent. Let $S=\{f^n:n \in \mathbb{N}\}$. Prove that $R[S^{-1}]$ is isomorphic to $R[z]/(fz-1)$. 
+\end{enumerate}
+
+
+\end{document}

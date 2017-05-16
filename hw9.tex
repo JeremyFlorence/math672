@@ -1,0 +1,45 @@
+\documentclass{article}
+\usepackage{amsfonts, amsmath}
+\usepackage[normalem]{ulem}
+
+\newcounter{problem}
+\newcounter{solution}
+
+\newcommand\Problem{%
+  \stepcounter{problem}%
+  \textbf{\theproblem.}~%
+  \setcounter{solution}{0}%
+}
+
+\newcommand\TheSolution{%
+  \textbf{Solution:} %
+}
+
+\newcommand\Proof{%
+	\textbf{Proof:} %
+}
+
+\parindent 0in
+\parskip 1em
+
+\begin{document}
+Name: Jeremy Florence\\
+Course: Math 672\\
+Assignment: Homework 9\\
+Due: 5/4/17\\
+
+\begin{enumerate}
+\item Let $R$ be a commutative domain and let $S=R-\{0\}.$ Prove that $R_{(0)}=R[S^{-1}]$ is a field. This field is called the \emph{field of fractions} of $R$. 
+
+\Proof Since $R$ is a domain and $0 \not \in S$, we know that $S$ is a multiplicatively closed set. Thus $R_{(0)}$ is a ring. Now we will show that $R_{(0)}$ has multiplicative commutativity. Let $\frac{a}{b},\frac{c}{d} \in R_{(0)}$. Now since $$\frac{a}{b} \cdot \frac{c}{d}=\frac{ac}{bd}$$ and $$\frac{c}{d} \cdot \frac{a}{b}=\frac{ca}{db}$$ we must show that there exists $s \in S$ so that $s(acdb-cabd)=0$. Since $R$ is commutative, we know that $acdb=cabd$. Thus we can choose $s=1$ to satisfy $s(acdb-cabd)=0$, so we now know that $\frac{ac}{bd}=\frac{ca}{db}$. Hence $R_{(0)}$ is commutative under multiplication.
+
+Now we will show that $R_{(0)}$ is closed under multiplicative inverse. Let $\frac{a}{b} \in R_{(0)}$ such that $\frac{a}{b} \neq 0$. Since $\frac{a}{b} \neq 0$, we know that $a \neq 0$. Hence we can choose $\frac{b}{a} \in R_{(0)}$ and we can see that $$\frac{a}{b} \cdot \frac{b}{a}=\frac{ab}{ba}.$$ Now we can choose $1 \in S$ and observe that since $R$ is commutative, $1(ab \cdot 1 - 1 \cdot ba)=0$, so $$\frac{a}{b} \cdot \frac{b}{a}=\frac{ab}{ba}=1.$$ Thus $R_{(0)}$ is closed under multiplicative inverse.
+
+Therefore as $R_{(0)}$ is a ring that is commutative under multiplication and closed under multiplicative inverse, we can conclude that $R_{(0)}$ is a field.
+
+\item As above, let $R \subseteq F$, where $F$ is a (possibly different) field. Prove that the field of fractions of $R$ is isomorphic to the smallest subfield of $F$ which contains $R$.\\
+\Proof 
+\end{enumerate}
+
+
+\end{document}

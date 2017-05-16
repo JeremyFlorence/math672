@@ -1,0 +1,89 @@
+\documentclass{article}
+\usepackage{amsfonts, amsmath}
+\usepackage[normalem]{ulem}
+
+\newcounter{problem}
+\newcounter{solution}
+
+\newcommand\Problem{%
+  \stepcounter{problem}%
+  \textbf{\theproblem.}~%
+  \setcounter{solution}{0}%
+}
+
+\newcommand\TheSolution{%
+  \textbf{Solution:} %
+}
+
+\newcommand\Proof{%
+	\textbf{Proof:} %
+}
+
+\parindent 0in
+\parskip 1em
+
+\begin{document}
+Jeremy Florence\\
+MATH 672\\
+Exam 1\\
+Due Tuesday, March 21\\
+
+
+\Problem In the ring $C^0(\mathbb{R})$ of continuous functions from $\mathbb{R}$ to $\mathbb{R}$, prove that the ideal (sin($x$), cos($x$)) is the unit ideal. Explain your work carefully.
+
+\Proof We want to show that $($sin$(x), $cos$(x))=C^0(\mathbb{R})$. Recall that (sin($x$), cos($x$))=\{$sin(x)f(x)+cos(x)g(x)\mid f(x),g(x) \in C^0(\mathbb{R}) $\}. Choose $f(x)=$ sin$(x)$ and $g(x)=$ cos$(x)$. Then we can see that $sin^2(x)+cos^2(x) \in (sin($x$), cos($x$))$, and since $sin^2(x)+cos^2(x)=1$, it is clear that $1 \in (sin(x), cos(x))$. Therefore we can conclude that $(sin(x), cos(x))=C^0(\mathbb{R})$.
+
+\Problem Give a complete factorization into irreducibles of the polynomial $x^7-x$, in the ring ($\mathbb{Z}$/7)[$x$].
+
+\TheSolution
+\[
+    \begin{split}
+        x^7-x &= x(x^3+1)(x^3-1)\\
+        		&= x(x+4)(x+2)(x+1)(x-4)(x-2)(x-1)
+    \end{split}
+\]
+
+\Problem Ideals $I$ and $J$ are called \emph{relatively prime} if $I+J=1$. Prove that if $I$ and $J$ are relatively prime, then $IJ=I \cap J$.
+
+\Proof Assume that $I$ and $J$ are relatively prime. We want to show that $IJ \subseteq I \cap J$ and $I \cap J \subseteq IJ$. 
+
+$(\subseteq)$ Let $x \in IJ$. Then there exist $a_1, ..., a_n \in I$ and $b_1, ..., b_n \in J$ for some $n \in \mathbb{N}$ such that $x=a_1b_1+ ... + a_nb_n$. Since $I$ and $J$ are ideals, we can see that $a_ib_i \in I \cap J$ for all $i \in \{1, ..., n\}$. Thus as $I \cap J$ is itself an ideal, it is closed under addition. Hence it follows that $x \in I \cap J$.
+
+$(\supseteq)$ Let $x \in I \cap J$. Since $I$ and $J$ are relatively prime, $I+J=(1)$. Thus there exist $i \in I$ and $j \in J$ such that $1=i+j$. Thus 
+\[
+	\begin{split}
+		x &= x \cdot 1\\
+			&= x \cdot (i+j)\\
+			&= xi+xj.\\
+	\end{split}
+\]
+Since $x \in I \cap J$, $i \in I$, and $j \in J$, we can see that $x$ is a finite sum of products of elements from $I$ and $J$, so $x \in IJ$. Therefore we can now conclude that $I \cap J \subseteq IJ$.
+
+Since we have shown both that $IJ \subseteq I \cap J$ and $I \cap J \subseteq IJ$, we can now conclude that if $I$ and $J$ are relatively prime, then $IJ= I \cap J$.
+
+\Problem Translate the above statement into a statement about integers, assuming ideals $I=(m)J=(n)$, in the ring $\mathbb{Z}$. (Your "translation" should involve basic notions of integers, but not rings and ideals.)
+
+\TheSolution If $m$ and $n$ are relatively prime integers, then $mn$ is the smallest integer which has both $m$ and $n$ as factors.
+
+\Problem Construct a field with nine elements. Prove it.
+
+\TheSolution
+
+\Problem In the ring $(\mathbb{Z}/6)[x]$, describe some (nonconstant) units and zerodivisors. Illustrate by example.
+
+\TheSolution
+
+Zero Divisors:
+\begin{itemize}
+	\item $3x(2x+2)=0$
+	\item $2x(3x+3)=0$
+	\item $(2x+4)(3x+3)=0$
+\end{itemize}
+
+\Problem Is this a ring? $(0,\infty)$ with "Addition" operation given by (normal) multiplication, and "multiplication" operation given by (normal) exponentiation. Explain.
+
+\TheSolution There is no multiplicative identity for the defined multiplication operation in $(0, \infty)$, so $(0, \infty)$ is not a ring with the defined addition and multiplication operations.
+
+\Proof For the sake of contradiction, suppose that $(0, \infty)$ has a multiplicative identity. Then there exists $i \in (0, \infty)$ so that for all $x \in (0, \infty)$, $x^i=x=i^x$. Since $x^i=x$, it must follow that $i=1$. Thus $i^x=1^x=1$ for all $x \in (0, \infty)$. Hence as $x^i=x=i^x$, it must follow that $x=1$ and furthermore that $(0, \infty) = \{1\}$, which is a contradiction. Therefore, $(0, \infty)$ has no multiplicative identity with the defined multiplication operation, so it is not a ring.
+
+\end{document}

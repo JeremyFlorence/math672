@@ -1,0 +1,40 @@
+\documentclass{article}
+\usepackage{amsfonts, amsmath}
+\usepackage[normalem]{ulem}
+
+\newcounter{problem}
+\newcounter{solution}
+
+\newcommand\Problem{%
+  \stepcounter{problem}%
+  \textbf{\theproblem.}~%
+  \setcounter{solution}{0}%
+}
+
+\newcommand\TheSolution{%
+  \textbf{Solution:} %
+}
+
+\newcommand\Proof{%
+	\textbf{Proof:} %
+}
+
+\parindent 0in
+\parskip 1em
+
+\begin{document}
+Name: Jeremy Florence\\
+Course: Math 672\\
+Assignment: Homework 8\\
+Due: 4/27/17\\
+\begin{enumerate}
+\item Let $S=\mathbb{Z}-(p)$. Prove that $\mathbb{Z}[S^{-1}]$ has exactly three ideals. Describe them completely. Tell any containments among them.\\
+
+\Proof We know that (0) and (1) are ideals for any ring. Thus we need to show that $\mathbb{Z}[S^{-1}]$ has exactly one more ideal which is not equal to (0) or (1). Let $p \in \mathbb{Z}$ be prime. Consider the ideal $\left(\frac{p}{1}\right)$. We can easily see that $\frac{p}{1} \not \in (0)$ and $\frac{1}{1} \not \in \left(\frac{p}{1}\right)$. Hence $\left(\frac{p}{1}\right)$ is an ideal of $\mathbb{Z}[S^{-1}]$, and $(0) \neq \left(\frac{p}{1}\right) \neq (1)$. For the sake of contradiction, suppose there exists an ideal $I$ of $\mathbb{Z}[S^{-1}]$ such that $I$ is not equal to (0), $\left(\frac{p}{1}\right)$, or (1). Let $\frac{a}{b} \in I$. Then we know that $a \in \mathbb{Z}$ and $b \in \mathbb{Z}-(p)$. Notice $\frac{b}{1} \in \mathbb{Z}[S^-1]$. Thus as $I$ is an ideal, we know that $\frac{b}{1} \cdot \frac{a}{b}=\frac{a}{1} \in I$. Now since $I \neq (0)$, it follows that $a \neq 0$. Therefore $\frac{1}{a} \in \mathbb{Z}[S^{-1}]$. Hence $\frac{a}{1} \cdot \frac{1}{a}=\frac{1}{1}$ and since $I$ is an ideal, we now know that $\frac{1}{1} \in \mathbb{Z}[S^{-1}]$. However this means that $I=(1)$, a contradiction. Therefore we can conclude that there are exactly three ideals of $\mathbb{Z}[S^{-1}]$, with the following order of containment: $(0) \subset (\frac{p}{1}) \subset (1)$. 
+
+\item Let $R$ be a domain and let $S$ be any multiplicatively closed subset of $R$. Prove that the canonical map $R \to R[S^{-1}]$ is injective.\\
+
+\Proof Let $\varphi:R \to R[S^{-1}]$ be the canonical map defined by $\varphi(r)=\frac{r}{1}$ for all $r \in R$. Let $a,b \in R$ so that $\varphi(a)=\varphi(b)$. We want to show that $a=b$. By the definition of the canonical map $\varphi$, we have $\varphi(a)=\frac{a}{1}$ and $\varphi(b)=\frac{b}{1}$. Hence we have $\frac{a}{1}=\frac{b}{1}$, so there exists $s \in S$ such that $s(a \cdot 1 - 1 \cdot b)=0$. Since $R$ is a domain, we know that either $s=0$ or $a-b=0$. However, $0 \not \in S$, so it is clear that $s\neq 0$. Hence $a-b=0$ which further implies that $a=b$, which is what we needed to show. Therefore the canonical map $\varphi$ is injective.\\
+\end{enumerate}
+
+\end{document}

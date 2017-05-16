@@ -1,0 +1,42 @@
+\documentclass{article}
+\usepackage{amsfonts, amsmath}
+\usepackage[normalem]{ulem}
+
+\newcounter{problem}
+\newcounter{solution}
+
+\newcommand\Problem{%
+  \stepcounter{problem}%
+  \textbf{\theproblem.}~%
+  \setcounter{solution}{0}%
+}
+
+\newcommand\TheSolution{%
+  \textbf{Solution:} %
+}
+
+\newcommand\Proof{%
+	\textbf{Proof:} %
+}
+
+\parindent 0in
+\parskip 1em
+
+\begin{document}
+Name: Jeremy Florence\\
+Course: Math 672\\
+Assignment: Homework \#9 problem 3\\
+Due: 5/9/17\\
+
+\begin{enumerate}
+\item[3.] Classify the units, irreducibles, and zerodivisors of the ring $\mathbb{Z}_{(p)}$. Is this ring a UFD?\\
+
+\TheSolution Note that the multiplicatively closed set for $\mathbb{Z}_{(p)}$ is $S=\mathbb{Z}-\{p\}$.\\ Thus, the units of $\mathbb{Z}_{(p)}$ are the elements in the set $\mathbb{Z}_{(p)}-(\frac{p}{1})$, the set of irreducibles is $\{\frac{a}{b} \in \mathbb{Z}_{(p)} | a=p\}$, and there are no zerodivisors.\\
+
+\textbf{Claim: } $\mathbb{Z}_{(p)}$ is a UFD.\\
+
+\textbf{Proof of Claim: } Recall that in Homework \#8, we proved that $\mathbb{Z}_{(p)}$ has precisely 3 ideals: $(0)$, $(\frac{p}{1})$, and $(1)$. Thus as each of these ideals is principal, $\mathbb{Z}_{(p)}$ is a PID. Therefore $\mathbb{Z}_{(p)}$ is a UFD.
+\end{enumerate}
+
+
+\end{document}
