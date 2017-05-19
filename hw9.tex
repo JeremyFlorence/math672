@@ -29,7 +29,7 @@ Assignment: Homework 9\\
 Due: 5/4/17\\
 
 \begin{enumerate}
-\item Let $R$ be a commutative domain and let $S=R-\{0\}.$ Prove that $R_{(0)}=R[S^{-1}]$ is a field. This field is called the \emph{field of fractions} of $R$. 
+\item Let $R$ be a commutative domain and let $S=R-\{0\}.$ Prove that $R_{(0)}=R[S^{-1}]$ is a field. This field is called the \emph{field of fractions} of $R$.\\
 
 \Proof Since $R$ is a domain and $0 \not \in S$, we know that $S$ is a multiplicatively closed set. Thus $R_{(0)}$ is a ring. Now we will show that $R_{(0)}$ has multiplicative commutativity. Let $\frac{a}{b},\frac{c}{d} \in R_{(0)}$. Now since $$\frac{a}{b} \cdot \frac{c}{d}=\frac{ac}{bd}$$ and $$\frac{c}{d} \cdot \frac{a}{b}=\frac{ca}{db}$$ we must show that there exists $s \in S$ so that $s(acdb-cabd)=0$. Since $R$ is commutative, we know that $acdb=cabd$. Thus we can choose $s=1$ to satisfy $s(acdb-cabd)=0$, so we now know that $\frac{ac}{bd}=\frac{ca}{db}$. Hence $R_{(0)}$ is commutative under multiplication.
 
@@ -38,7 +38,40 @@ Now we will show that $R_{(0)}$ is closed under multiplicative inverse. Let $\fr
 Therefore as $R_{(0)}$ is a ring that is commutative under multiplication and closed under multiplicative inverse, we can conclude that $R_{(0)}$ is a field.
 
 \item As above, let $R \subseteq F$, where $F$ is a (possibly different) field. Prove that the field of fractions of $R$ is isomorphic to the smallest subfield of $F$ which contains $R$.\\
-\Proof 
+
+\Proof Observe that for any $b \in R-\{0\}$, $b^{-1} \in F$. Define $f:R_{(0)} \to F$ by $f(\frac{a}{b})=ab^{-1}$ for all $\frac{a}{b} \in R_{(0)}$. We will first show that $f$ is a ring homomorphism. Let $\frac{a}{b},\frac{c}{d} \in R_{(0)}$. Then
+\[
+	\begin{split}
+		f \left(\frac{a}{b} + \frac{c}{d}\right) &= f \left(\frac{ad+bc}{bd} \right)\\
+									&=(ad+bc)(d^{-1}b^{-1})\\
+									&=add^{-1}b^{-1}+bcd^{-1}b^{-1}\\
+									&=ab^{-1}+cd^{-1}\\
+									&=f \left( \frac{a}{b} \right) + f \left( \frac{c}{d} \right).
+	\end{split}
+\]
+Also, 
+\[
+	\begin{split}
+		f \left(\frac{a}{b} \cdot \frac{c}{d} \right) &= f \left(\frac{ac}{bd} \right)\\
+											&= acd^{-1}b^{-1}\\
+											&= ab^{-1} \cdot cd^{-1}\\
+											&= f \left( \frac{a}{b} \right) \cdot f \left( \frac{c}{d} \right).
+	\end{split}
+\]
+
+Therefore we now know that $f$ is a homomorphism.\\
+
+Now we will show that $f$ is injective. Let $\frac{a}{b}, \frac{c}{d} \in R_{(0)}$ so that $f \left( \frac{a}{b} \right) = f \left( \frac{c}{d} \right)$. Then
+\[
+	\begin{split}
+		ab^{-1}&=cd^{-1}\\
+		ab^{-1}bd&=cd^{-1}bd\\
+				ad&=bc.\\
+	\end{split}
+\]
+
+Thus $\frac{a}{b}=\frac{c}{d}$ since $ad-bc=0$, so $f$ is injective. Now it is clear that $f:R_{(0)} \to f (R_{(0)})$ is surjective, so $f$ is an isomorphism. Therefore as $f(R_{(0)})$ is a field, and $f(R_{(0)}) \subseteq F$, we now know that $f(R_{(0)})$ is a subfield of $F$. Finally, we can conclude that $R_{(0)}$ is isomorphic to $f(R_{(0)})$, which is the smallest subfield of $F$ which contains $R$.
+ 
 \end{enumerate}
 
 
