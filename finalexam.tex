@@ -31,28 +31,35 @@ Due: 5/19/17
 \begin{enumerate}
 	\item Show that every quotient ring of a Noetherian ring is a Noetherian Ring. Is the same true for "every subring of..."?
 	
-	\Proof Let $R$ be a Noetherian ring with an ideal $I$. We  want to show that $R/I$ is also Noetherian. Recall that $R/I=\{r+I|r \in R \}$. Since $R$ is Noetherian, we know that $I$ is finitely generated. That is, $I=(i_1,i_2,...,i_n)$ for some $i_1,i_2,...,i_n \in R, n \in \mathbb{N}$. Now consider the canonical map to the quotient $\varphi:R \to R/I$ defined by $\varphi(r)=r+I$ for all $r \in R$. Now we can extend $I$ to $R/I$ through $\varphi$ to get $I^e=(\varphi(I))$. Note that $\varphi(I)=\{i+I|i \in I\}$, so $\varphi(I)=\{I\}$.
+	\Proof Let $R$ be a Noetherian ring with an ideal $I$. We  want to show that $R/I$ is also Noetherian. Let $J$ be and ideal of $R/I$. Now by contracting $J$ to $R$ across the canonical map to the quotient $\varphi$, we know that $J^c=\varphi^{-1}(J)$ is an ideal of $R$. Since $R$ is Noetherian, it is finitely generated. That is, there exist $j_1, j_2, ... , j_n$ such that $(j_1, j_2, ..., j_n)=J^c$. Thus it must follow that $(\varphi(j_1),\varphi(j_2),...,\varphi(j_n))=J$. Therefore J is finitely generated and hence Noetherian.
 	
-	HINT: Think about other ideals other than $I$.+
+	\textbf{Proposition:} Every subring of a Noetherian ring is a Noetherian ring.
+	
+	\textbf{Counterexample:} Let $k$ be a field. Then the polynomial ring over $k$ with infinitely many variables $R=k[x_1,x_2,...]$ is a commutative domain, but $R$ is not Noetherian because we can keep choosing more variables to extend the chain of ideals: $$(x_1) \subset (x_1, x_2) \subset (x_1, x_2, x_3) \subset ...$$ Now by homework 9, we know that $R$ has a field of fractions $R_{(0)}$. Fields only have two ideals, $(0)$ and $(1)$, so $R_{(0)}$ is clearly Noetherian. We also know that $R \subset R_{(0)}$, so there exists a Noetherian ring which has a subring that is not Noetherian.\\
 	
 	\item Let $k$ be field. Prove that $k[x,y]$ is \emph{not} a PID.
 	
-	\Proof Choose the ideal which is the set of polynomials with no constant term that map (0,0) to 0. Prove that this is actually an ideal.
+	\Proof For the sake of contradiction, suppose $k[x,y]$ is a PID. Now consider the ideal $(x,y)$. There must exist some $i \in k[x,y]$ so that $(i)=(x,y)$. Hence as $x,y \in (i)$ it must follow that $x$ and $y$ are factors of $i$. However, $x$ and $y$ are both irreducible in $k[x,y]$, so $i$ must be a unit. Therefore $(i)=(x,y)=(1)$, a contradiction. Therefore, $k[x,y]$ is not a PID.\\
 	
 	\item Find a ring $R$ which has a chain of prime ideals $P_1 \subsetneq P_2 \subsetneq P_3 \subsetneq P_4 \subsetneq R$.
+	
+	\TheSolution Let $R=\mathbb{Z}[x,y,z]$ and let $p \in \mathbb{Z}$ be prime. Then we have the chain of prime ideals $(p) \subsetneq (p,x) \subsetneq (p,x,y) \subsetneq (p,x,y,z) \subsetneq \mathbb{Z}[x,y,z]$.\\
+\\
+\\
+\\
+\\
 	
 	\item Prove that $\mathbb{Z}[i]$ is a Euclidean domain.
 	
 	\Proof Define $d: \mathbb{Z}[i]-\{0\} \to \mathbb{N}$ by $d(a+bi)=a^2+b^2$ for all $a+bi \in \mathbb{Z}[i]-\{0\}$. Let $(a+bi),(c+di) \in \mathbb{Z}[i]-\{0\}$. Then	
 	\[
 		\begin{split}
-			d((a+bi)(c+di))&=(ac-bd)^2+(ad+bc)^2 \\
-							&= a^2c^2-2abcd+b^2d^2+a^2d^2+2abcd+b^2c^2\\
-							&= a^2c^2+b^2d^2+a^2d^2+b^2c^2.
+			d((a+bi)(c+di))&=d(a+bi) \cdot d(c+di) \\
+							&= (a^2+b^2) \cdot (c^2+d^2).\\
 		\end{split}
 	\]
 	
-	Thus as $d(a+bi)=a^2+b^2$, and $a,b,c,d \in \mathbb{Z}$, it is clear that $$d((a+bi)(c+di)) \geq d(a+bi).$$
+	Thus as $a,b,c,d \in \mathbb{Z}$, it is clear that $d((a+bi)(c+di)) \geq d(a+bi).$
 	
 	
 	
