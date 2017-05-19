@@ -31,13 +31,30 @@ Due: 5/19/17
 \begin{enumerate}
 	\item Show that every quotient ring of a Noetherian ring is a Noetherian Ring. Is the same true for "every subring of..."?
 	
-	\Proof Let $R$ be a Noetherian ring with the ideal $I$. We  want to show that $R/I$ is also Noetherian. Recall that $R/I=\{r+I|r \in R \}$
+	\Proof Let $R$ be a Noetherian ring with an ideal $I$. We  want to show that $R/I$ is also Noetherian. Recall that $R/I=\{r+I|r \in R \}$. Since $R$ is Noetherian, we know that $I$ is finitely generated. That is, $I=(i_1,i_2,...,i_n)$ for some $i_1,i_2,...,i_n \in R, n \in \mathbb{N}$. Now consider the canonical map to the quotient $\varphi:R \to R/I$ defined by $\varphi(r)=r+I$ for all $r \in R$. Now we can extend $I$ to $R/I$ through $\varphi$ to get $I^e=(\varphi(I))$. Note that $\varphi(I)=\{i+I|i \in I\}$, so $\varphi(I)=\{I\}$.
+	
+	HINT: Think about other ideals other than $I$.+
 	
 	\item Let $k$ be field. Prove that $k[x,y]$ is \emph{not} a PID.
+	
+	\Proof Choose the ideal which is the set of polynomials with no constant term that map (0,0) to 0. Prove that this is actually an ideal.
 	
 	\item Find a ring $R$ which has a chain of prime ideals $P_1 \subsetneq P_2 \subsetneq P_3 \subsetneq P_4 \subsetneq R$.
 	
 	\item Prove that $\mathbb{Z}[i]$ is a Euclidean domain.
+	
+	\Proof Define $d: \mathbb{Z}[i]-\{0\} \to \mathbb{N}$ by $d(a+bi)=a^2+b^2$ for all $a+bi \in \mathbb{Z}[i]-\{0\}$. Let $(a+bi),(c+di) \in \mathbb{Z}[i]-\{0\}$. Then	
+	\[
+		\begin{split}
+			d((a+bi)(c+di))&=(ac-bd)^2+(ad+bc)^2 \\
+							&= a^2c^2-2abcd+b^2d^2+a^2d^2+2abcd+b^2c^2\\
+							&= a^2c^2+b^2d^2+a^2d^2+b^2c^2.
+		\end{split}
+	\]
+	
+	Thus as $d(a+bi)=a^2+b^2$, and $a,b,c,d \in \mathbb{Z}$, it is clear that $$d((a+bi)(c+di)) \geq d(a+bi).$$
+	
+	
 	
 	\item Let $I \subseteq P \subsetneq R$, where $I$ is an ideal and $P$ is a prime ideal of $R$. Prove that the ring $R_P/I^e$ (the quotient of the localization at $P$ by the extension of the ideal $I$ to that localization) and the ring $(R/I)_{P/I}$ (the localization of the quotient ring $R/I$ at the prime ideal $P/I$) are isomorphic.
 	
